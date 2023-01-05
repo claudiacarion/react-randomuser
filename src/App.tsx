@@ -20,15 +20,15 @@ function App() {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await fetch('https://randomuser.me/api/')
-      const data = await response.json()
-      const firstUser = data.results[0]
+      const res = await fetch('https://randomuser.me/api/')
+      const data = await res.json()
+      const fetchedUser = data.results[0]
       setUser(prev => {
         return {
           ...prev,
-          name: firstUser.name.first,
-          age: firstUser.dob.age,
-          address: firstUser.location.street.name,
+          name: fetchedUser.name.first,
+          age: fetchedUser.dob.age,
+          address: fetchedUser.location.street.name,
         }
       })
     }

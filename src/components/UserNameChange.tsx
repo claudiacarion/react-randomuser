@@ -8,7 +8,8 @@ interface IUserNameChangeProps {
 
 const UserNameChange = ({ user: { name }, nameChange } : IUserNameChangeProps) => (
     <div>
-      <input type="text" value={name} onChange={nameChange} placeholder={'change name'}/>
+      <p>change the username here:</p>
+      <input type="text" value={name} onChange={nameChange}/>
     </div>
 );
 
