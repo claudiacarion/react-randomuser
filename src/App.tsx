@@ -14,9 +14,7 @@ function App() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
-
     const value = e.currentTarget.value
-
     setUser({ ...user, name: value })
   }
 
@@ -24,9 +22,7 @@ function App() {
     const getData = async () => {
       const response = await fetch('https://randomuser.me/api/')
       const data = await response.json()
-
       const firstUser = data.results[0]
-
       setUser(prev => {
         return {
           ...prev,
@@ -36,7 +32,6 @@ function App() {
         }
       })
     }
-
     getData()
   }, [])
 
