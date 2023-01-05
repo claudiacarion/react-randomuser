@@ -5,8 +5,8 @@ interface IUserAddressProps {
   user : UserData
 }
 
-const UserAddress = ({ user: { address } } : IUserAddressProps) => (
-    <div>{address}</div>
+const UserAddress = ({ user: { address }, user: { name } } : IUserAddressProps) => (
+    <div>{name} lives on {address}.</div>
 );
 
 export default UserAddress;

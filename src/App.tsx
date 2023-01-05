@@ -3,6 +3,7 @@ import UserAddress from './components/UserAddress'
 import UserAge from './components/UserAge'
 import UserName from './components/UserName'
 import UserNameChange from './components/UserNameChange'
+import UserPic from './components/UserPic'
 import { UserData } from './types'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     name: '',
     age: 0,
     address: '',
+    pic: '',
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,6 +31,7 @@ function App() {
           name: fetchedUser.name.first,
           age: fetchedUser.dob.age,
           address: fetchedUser.location.street.name,
+          pic: fetchedUser.picture.large,
         }
       })
     }
@@ -38,6 +41,7 @@ function App() {
   return (
     <main>
       <UserName user={user} />
+      <UserPic user={user} />
       <UserAge user={user} />
       <UserAddress user={user} />
       <UserNameChange user={user} nameChange={handleChange} />
